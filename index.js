@@ -20,7 +20,10 @@ db.once('open', function() {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(cookieParser());
-    app.use('/', rotas);
+
+    // URL_BASE, DEFINIÇÃO DAS ROTAS
+    app.use('/pessoas', rotas);
+
     app.listen(3000, function() { // Inicia o servidor
         console.log('Servidor ouvindo na porta 3000');
     });
